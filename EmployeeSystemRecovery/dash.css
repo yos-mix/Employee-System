@@ -1,0 +1,308 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Ubuntu', sans-serif;
+}
+:root{
+     --blue: #287bff;
+     --blue1: #008bdb;
+     --blue2: #0fa7ff;
+     --white: #fff;
+     --grey: #f5f5f5;
+     --black1: #222;
+     --black2: #999;
+}
+body{
+     min-height: 100vh;
+     overflow-x: hidden;
+}
+.container{
+     position: relative;
+     width: 100%;
+}
+.navigation{
+     position: fixed;
+     width: 300px;
+     height: 100%;
+     background: var(--blue);
+     border-left: 10px solid var(--blue);
+     transition: 0.5s;
+     overflow: hidden;
+     width: 15%;
+     float: left;
+}
+.navigation ul{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+}
+.navigation ul li{
+     position: relative;
+     width: 100%;
+     list-style: none;
+     border-top-left-radius: 30px;
+     border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered{
+    background: var(--white); 
+}
+.navigation ul li:nth-child(1){
+     margin-bottom: 40px;
+     cursor: pointer;
+}
+.navigation ul li a{
+     position: relative;
+     display: block;
+     width: 100%;
+     display: flex;
+     text-decoration: none;
+     color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+     color: var(--blue);
+}
+.navigation ul li a .icon{
+     position: relative;
+     display: block;
+     min-width: 60px;
+     height: 60px;
+     line-height: 70px;
+     text-align: center;
+}
+.navigation ul li a .icon ion-icon{
+     font-size: 1.75em;
+}
+.navigation ul li .title{
+     position: relative;
+     display: block;
+     padding: 0 10px;
+     height: 60px;
+     line-height: 60px;
+     text-align: start;
+     white-space: nowrap;
+}
+/*CurveOutside*/
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+     content: '';
+     position: absolute;
+     right: 0;
+     top: -50px;
+     width: 50px;
+     height: 50px;
+     background: transparent;   
+     border-radius: 50%;
+     box-shadow: 35px 35px 0 10px var(--white);  
+     pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+     content: '';
+     position: absolute;
+     right: 0;
+     bottom: -50px;
+     width: 50px;
+     height: 50px;
+     background: transparent;   
+     border-radius: 50%;
+     box-shadow: 35px -35px 0 10px var(--white);  
+     pointer-events: none;
+}
+/*****Content***/
+.content{
+     width: 85%;
+     float: right;
+     padding: 15px;
+}
+.box-1, .box-2, .box-3{
+     float: left;
+     width: 30%;
+     border: 3px solid var(--blue1);
+     padding: 5px;
+     padding-top: 10px;
+     margin-top: 40px;
+     cursor: pointer;
+}
+.box-1:hover, .box-2:hover, .box-3:hover{
+     box-shadow: 5px 7px var(--blue2);
+     transition: .3s;
+}
+.box-1, .box-2{
+     margin-right: 5%;
+}
+.content-left:after {
+     content: "";
+     display: table;
+     clear: both;
+}
+.content-left-down1{
+     width: 65%;
+     float: left;
+}
+.content-left-down2 p{
+     font-size: 25px;
+     font-weight: 300;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     padding: 5px 0 0 5px;
+}
+.content-left-down2{
+     width: 30%;
+     float: right;
+     border: 3px solid var(--blue1);
+     padding: 5px;
+     padding-top: 10px;
+     margin-top: 40px;
+     cursor: pointer;
+     font-size: 25px;
+     font-weight: 300;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     padding: 5px 0 0 5px;
+}
+.box-1, .box-2, .box-3{
+     font-size: 25px;
+     font-weight: 300;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     padding: 5px 0 0 5px;
+}
+.box-icon{
+     width: 50%;
+     float: left;
+}
+.box-icon ion-icon{
+     font-size: 2.5em;
+     padding: 11px 0 0 7px;
+}
+.box-down{
+     border: 3px solid var(--blue1);
+     padding: 5px;
+     padding-top: 10px;
+     margin-top: 40px;
+     cursor: pointer;
+     min-height: 260px;
+}
+.box-down p{
+     font-size: 25px;
+     font-weight: 300;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     padding: 5px 0 0 5px;
+}
+.box-down table{
+     padding: 15px;
+}
+.box-down table th{
+     font-size: 25px;
+     padding-right: 15px;
+}
+.box-down table td{
+     font-size: 20px;
+}
+.extra-box{
+     min-height: 250px;
+}
+.data{
+     width: 50%;
+     float: right;
+     padding: 5px 10px 0 0;
+     text-align: right;
+     font-size: 2.5em;
+}
+/*.personal-info, .education-background, .company{
+     border: 1px solid var(--blue);
+     padding: 5px;
+     padding-top: 10px;
+     margin-top: 40px;
+     box-shadow: 5px 10px var(--blue);
+     cursor: pointer;
+}
+.personal-info h1, .education-background h1, .company h1{
+     font-size: 30px;
+     font-weight: 200;
+}
+.personal-info p, .education-background p, .company p{
+     font-size: 25px;
+     font-weight: 300;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     padding: 5px 0 0 5px;
+}
+.personal-info small, .education-background small, .company small{
+     padding-left: 6px;
+}*/
+.content-left{
+     width: 80%;
+     float: left;
+     padding-top: 30px;
+}
+.content-right{
+     width: 20%;
+     float: left;
+     padding: 70px 0 0 20px;
+}
+.btn{
+     position: absolute;
+     top: 38px;
+     right: 295px;
+     cursor: pointer;
+     color: var(--blue);
+     border: 2px solid var(--blue);
+     border-radius: 30px;
+     background-color: var(--white);
+}
+.btn h1{
+     padding: 10px 20px;
+     font-size: 15px;
+}
+.btn:hover{
+     color: white;
+     background-color: var(--blue);
+     transition: .3s;
+}
+
+/****EVENT****/
+.event{
+     display: flex;
+     font-size: 14px;
+     margin-bottom: 20px;
+     cursor: pointer;
+     padding: 10px 0 10px 10px;
+}
+.event:hover{
+     background-color: var(--grey);
+}
+.left-event{
+     border-radius: 10px;
+     height: 65px;
+     width: 65px;
+     margin-right: 15px;
+     padding-top: 10px;
+     text-align: center;
+     position: relative;
+     overflow: hidden;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.event p{
+     font-size: 12px;
+}
+.event a{
+     font-size: 12px;
+     text-decoration: none;
+     color: var(--blue);
+}
+.event a:hover{
+     color: black;
+     text-decoration: underline;
+     transition: .3s;
+}
+.left-event span{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     background: var(--blue);
+     color: #fff;
+     font-size: 10px;
+     padding: 4px 0;
+}
